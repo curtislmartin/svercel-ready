@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
 	import Header from './Header.svelte';
 	import './styles.css';
+	import type { LayoutServerData } from './$types';
 
-	/** @type {import('./$types').LayoutServerData} */
-	export let data;
+	export let data: LayoutServerData;
 
 	$: if (browser) {
 		webVitals({
